@@ -25,7 +25,9 @@ def index(request):
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
 # Render the response and send it back!
-    return render(request, 'rango/index.html', context=context_dict)
+    #return render(request, 'rango/index.html', context=context_dict)
+
+    return HttpResponse("Rango says hey there partner! <a href='/rango/about/'>About</a>")
 
 
 
@@ -34,7 +36,9 @@ def about(request):
     print(request.method)
     # prints out the user name, if no one is logged in it prints `AnonymousUser`
     print(request.user)
-    return render(request, 'rango/about.html', {})
+    #return render(request, 'rango/about.html', {})
+
+    return HttpResponse("Rango says here is the about page.  <a href='/rango/'>Index</a>")
     
 def show_category(request, category_name_slug):
     # Create a context dictionary which we can pass
